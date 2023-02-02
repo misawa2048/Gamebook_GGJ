@@ -1,7 +1,7 @@
 # Gamebook_GGJ
 a simple gamebook engine using Google spread sheet
 
-[sample](https://elix.jp/test/gamebook/)  
+[sample(Japanese)](https://elix.jp/test/gamebook/)  
 ![image](https://camo.qiitausercontent.com/6aed9684ed29dc4d4ad84ec6f98957576c7827ab/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f35393931312f36633039356537652d356339612d616165392d663366642d3436313437623763626565362e706e67)  
 
 # How to create
