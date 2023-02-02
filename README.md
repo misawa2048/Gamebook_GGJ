@@ -4,7 +4,7 @@ gamebook is a type of books you select story youeself.
 this application has made for [Global Game Jam 2023](https://globalgamejam.org/).  
 
 [sample(Japanese)](https://elix.jp/test/gamebook/)  
-![image](https://camo.qiitausercontent.com/6aed9684ed29dc4d4ad84ec6f98957576c7827ab/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f35393931312f36633039356537652d356339612d616165392d663366642d3436313437623763626565362e706e67)  
+<img src="https://camo.qiitausercontent.com/6aed9684ed29dc4d4ad84ec6f98957576c7827ab/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f35393931312f36633039356537652d356339612d616165392d663366642d3436313437623763626565362e706e67" width="360px">   
 
 # HOW TO CREATE YOUE GAME BOOK 
 [日本語版 instruction for Japanese](https://qiita.com/ELIXIR/items/65f80116418550ab1f85)  
@@ -53,13 +53,13 @@ before:
 after:  
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/91d10a2d-e4b3-6385-773d-ce986370f9c8.png)
 
-## Deploy it
+## Deploy
 ##### 1. deploy and keep your Deployment ID.
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/f65b54fd-808b-6a17-211f-d2de8028816d.png)  
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/282f7067-df6c-1933-4338-4343a648af37.png)  
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/282f7067-df6c-1933-4338-4343a648af37.png" width="65%">   
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/f947e919-80cd-f163-5c8b-95a5734e192e.png)  
 
-##### 2. paste your Deployment ID to global.js
+##### 2. paste your Deployment ID to [global.js](https://github.com/misawa2048/Gamebook_GGJ/blob/master/gamebook/global.js)
 ``` global.js
 let API_POINT = "https://script.google.com/macros/s/";
 let DEF_SHEET_NAME = 'masterSheet';
