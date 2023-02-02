@@ -13,12 +13,19 @@ _onload = async function(){
     if(vars["imglink"]!=undefined) g_imgLink = (vars["imglink"]=="true");
     let sheetName = (vars["sheet"]!=undefined) ? vars["sheet"]:DEF_SHEET_NAME;
     let apiUri = API_POINT+g_apiKey+"/exec?sheet="+sheetName;
-    let data = await loadData(apiUri);
-    g_items = data.items;
-    for(var i=0;i<g_items.length;++i){
-        g_items[i].labelId = i; // labelIdを付けておく
+    try{
+        let data = await loadData(apiUri);
+        g_items = data.items;
+        for(var i=0;i<g_items.length;++i){
+            g_items[i].labelId = i; // labelIdを付けておく
+        }
+        reset(sttSceneId);
+    }catch{
+        let txtEle = document.getElementById("iMainTxtDiv");
+        var txt = '<a href="https://github.com/misawa2048/Gamebook_GGJ#readme" target="_">Set your Deployment_ID</a>';
+        txt += '<br>e.g.<br>./gamebook/index.html?apikey=[YOUR_DEPLOYMENT_ID]';
+        txtEle.innerHTML=txt;
     }
-    reset(sttSceneId);
 }
 
 reset = function(_sttSceneId=0){
