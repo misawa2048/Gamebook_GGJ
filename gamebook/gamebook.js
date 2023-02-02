@@ -2,7 +2,7 @@ var g_items=[];
 var g_stackArr=[];
 var g_sceneId=0;
 var g_se = null;
-var g_imgLink=true;
+var g_imgLink=false;
 
 _onload = async function(){
     var sttSceneId=0;
