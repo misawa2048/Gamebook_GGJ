@@ -94,7 +94,7 @@ you can use <br> tag in button text
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/2c1083fa-5556-9f6c-25e7-7247280b8067.png)  
   
 ## Check your gamebook and edit it
-access to [https://misawa2048.github.io/Gamebook_GGJ/gamebook/?apikey=YOUR_DEPLOYMENT_ID](https://misawa2048.github.io/Gamebook_GGJ/gamebook/?apikey=YOUR_DEPLOYMENT_ID),  
+access to <a href="https://misawa2048.github.io/Gamebook_GGJ/gamebook/?apikey=YOUR_DEPLOYMENT_ID" target="_blank" rel="noopener noreferrer">https://misawa2048.github.io/Gamebook_GGJ/gamebook/?apikey=YOUR_DEPLOYMENT_ID</a>,  
 or ```./gamebook/index.html```  and check it.  
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/d46512cb-1186-fae6-3ab9-ba74d4d0fd2a.png)  
   
