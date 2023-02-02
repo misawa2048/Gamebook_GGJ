@@ -110,8 +110,8 @@ you can change some settings by url query below;
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/1733fe3d-6ef2-51c3-1bab-82d822da8d3a.png)
 
-##### disable image link
-```&imglink=false``` makes disable image link to [MEMEPLEX](https://memeplex.app/) by default.  
+##### enable image link
+```&imglink=true``` makes enable image link to [MEMEPLEX](https://memeplex.app/).  
 
 ##### display debug info
 ```&debug=true``` makes to display page stack info and back button.  
