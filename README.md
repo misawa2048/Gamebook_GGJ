@@ -15,7 +15,7 @@ a simple gamebook engine using Google spread sheet
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/44e4b63e-eb31-4117-79f4-8eff190bfc51.png)  
 
 ## create a new Apps Script
-##### 1. Extensions App Script  
+##### 1. select Extensions > App Script  
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/ef7a0a7e-d70a-d247-6761-279e61e5b9f3.png)  
 
 ##### 2. replace script:  
