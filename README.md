@@ -103,20 +103,20 @@ you can change some settings by url query below;
 ```./gamebook/?apikey=[Deployment ID]&sheet=[sheetname]&debug=true```  
 
 ##### Deployment ID
-```&apikey=[Deployment ID]``` set other spreadsheet.  
+```&apikey=[Deployment ID]``` set other spreadsheet to use. 
 
 ##### select sheet name
-```&sheet=[sheetname]``` can set sheet name except "masterSheet".  
+```&sheet=[sheetname]``` changes using sheet except "masterSheet".  
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/1733fe3d-6ef2-51c3-1bab-82d822da8d3a.png)
 
 ##### enable image link
-```&imglink=true``` makes enable image link to [MEMEPLEX](https://memeplex.app/).  
+```&imglink=true``` enables image link to [MEMEPLEX](https://memeplex.app/).  
 
 ##### display debug info
-```&debug=true``` makes to display page stack info and back button.  
+```&debug=true``` displays page stack and back button.  
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/5547f6c1-efce-4712-5db4-b92046832b14.png)  
 
 ##### set start page
-```&page=[page]``` makes to start from specified page.  
+```&page=[page]``` makes start page specified.  
