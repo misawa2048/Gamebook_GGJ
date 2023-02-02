@@ -88,7 +88,7 @@ there are 3 methods to junp to another page.
 ```Go to next space{4}```  means jump to 4th row in same spreadsheet.  
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/5ea658fc-c124-d7b1-b75c-448b333b398d.png)  
-you can use <br> tag in button text  
+you can use &lt;br&gt; tag in button text  
 ```Go to next space<br>and escape{escape}```  
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/2c1083fa-5556-9f6c-25e7-7247280b8067.png)  
