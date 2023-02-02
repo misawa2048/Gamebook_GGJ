@@ -98,7 +98,7 @@ access to [https://misawa2048.github.io/Gamebook_GGJ/gamebook/?apikey=YOUR_DEPLO
 or ```./gamebook/index.html```  and check it.  
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/d46512cb-1186-fae6-3ab9-ba74d4d0fd2a.png)  
   
-## Query settings
+## QuerySettings
 you can change some settings by url query below;
 ```./gamebook/?apikey=[Deployment ID]&sheet=[sheetname]&debug=true```  
 
