@@ -103,7 +103,7 @@ you can change some settings by url query below;
 ```./gamebook/?apikey=[Deployment ID]&sheet=[sheetname]&debug=true```  
 
 ##### Deployment ID
-```&apikey=[Deployment ID]``` set other spreadsheet to use. 
+```&apikey=[Deployment ID]``` changes the spreadsheet to specified. 
 
 ##### select sheet name
 ```&sheet=[sheetname]``` changes using sheet except "masterSheet".  
@@ -119,4 +119,4 @@ you can change some settings by url query below;
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59911/5547f6c1-efce-4712-5db4-b92046832b14.png)  
 
 ##### set start page
-```&page=[page]``` makes start page specified.  
+```&page=[page]``` sets the start page to the specified number.  
