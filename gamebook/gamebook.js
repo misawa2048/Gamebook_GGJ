@@ -98,7 +98,8 @@ setData = function(_rowDataJson){
     setButtons(_rowDataJson);
 
     let pageEle = document.getElementById("iPageNoDiv");
-    pageEle.innerHTML=`<i aria-hidden="true">-- ${_rowDataJson.labelId+2} --</i>`; // sheetのrowNo
+    let row = (g_rowStr=="") ? (_rowDataJson.labelId+2) : g_rowNo;
+    pageEle.innerHTML=`<i aria-hidden="true">-- ${row} --</i>`; // sheetのrowNo
 
     var se = _rowDataJson.se;
     if((MUTE_SE!="")&&(se=="")){
