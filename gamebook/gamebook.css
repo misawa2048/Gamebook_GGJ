@@ -11,6 +11,7 @@ table, td, th {
 canvas {
   display: block;
 }
+button :hover{ cursor:pointer;}
 
 #iPageDiv{
   background-color: beige;
