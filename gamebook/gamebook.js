@@ -8,11 +8,14 @@ var g_imgLink=false;
 _onload = async function(){
     var sttSceneId=0;
     let vars = getVarsFromParams();
+    var rowStr="";
     if(vars["apikey"]!=undefined) g_apiKey = vars["apikey"];
     if(vars["page"]!=undefined) sttSceneId = Math.max(parseInt(vars["page"])-1,0);
     if(vars["debug"]!=undefined) g_isDebug = (vars["debug"]=="true");
     if(vars["img"]!=undefined) g_imgDisp = (vars["img"]=="true");
     if(vars["imglink"]!=undefined) g_imgLink = (vars["imglink"]=="true");
+    if(vars["row"]!=undefined) rowStr = vars["row"];
+
     let sheetName = (vars["sheet"]!=undefined) ? vars["sheet"]:DEF_SHEET_NAME;
 
     if(g_imgDisp){
@@ -20,6 +23,9 @@ _onload = async function(){
         imgEle.innerHTML=`<img src="${LOGO_IMG}" class="cMaskImgSq cFadeIn">`;
     }
     let apiUri = API_POINT+g_apiKey+"/exec?sheet="+sheetName;
+    if(rowStr!=""){
+        apiUri+="&row="+rowStr;
+    }
     try{
         let data = await loadData(apiUri);
         g_items = data.items;
