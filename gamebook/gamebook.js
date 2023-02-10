@@ -24,7 +24,7 @@ _onload = async function(){
         let data = await loadData(apiUri);
         g_items = data.items;
         for(var i=0;i<g_items.length;++i){
-            g_items[i].labelId = i; // labelIdを付けておく
+            g_items[i].labelId = i; // labelId(=ronNo-2)を付けておく
         }
         reset(sttSceneId);
     }catch{
@@ -90,7 +90,7 @@ setData = function(_rowDataJson){
     setButtons(_rowDataJson);
 
     let pageEle = document.getElementById("iPageNoDiv");
-    pageEle.innerHTML=`<i aria-hidden="true">-- ${_rowDataJson.labelId+1} --</i>`;
+    pageEle.innerHTML=`<i aria-hidden="true">-- ${_rowDataJson.labelId+2} --</i>`; // sheetのrowNo
 
     var se = _rowDataJson.se;
     if((MUTE_SE!="")&&(se=="")){
