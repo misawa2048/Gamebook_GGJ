@@ -89,6 +89,9 @@ setData = function(_rowDataJson){
     //console.log(_rowDataJson.text);
     setButtons(_rowDataJson);
 
+    let pageEle = document.getElementById("iPageNoDiv");
+    pageEle.innerHTML=`<i aria-hidden="true">-- ${_rowDataJson.labelId+1} --</i>`;
+
     var se = _rowDataJson.se;
     if((MUTE_SE!="")&&(se=="")){
         se = MUTE_SE;
@@ -153,9 +156,6 @@ chgScene=function(_sceneId, _noStack=false){
         chgScene(data.id,true);
     }
     else if(_sceneId>=0){
-        let pageEle = document.getElementById("iPageNoDiv");
-        pageEle.innerHTML=`-- ${_sceneId+1} --`;
-
         setData(g_items[_sceneId]);
         document.getElementById('iHeadDiv').focus();
 
