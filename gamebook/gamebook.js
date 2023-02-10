@@ -5,6 +5,7 @@ var g_se = null;
 var g_imgDisp=true;
 var g_imgLink=false;
 var g_rowStr="";
+var g_rowNo=0;
 
 _onload = async function(){
     var sttSceneId=0;
@@ -28,6 +29,7 @@ _onload = async function(){
     }
     try{
         let data = await loadData(apiUri);
+        g_rowNo = parseInt(data.row);
         g_items = data.items;
         for(var i=0;i<g_items.length;++i){
             g_items[i].labelId = i; // labelId(=ronNo-2)を付けておく
@@ -118,9 +120,13 @@ setButtons = function(_rowDataJson){
     for(var i=0;i<buttonStrArr.length;++i){
         let txtLnkArr = buttonStrArr[i].split('{'); // ex: 森へ,1
         if(txtLnkArr.length>=2){
-            let retId = getRetId(txtLnkArr[1],_rowDataJson.labelId);
-            if(retId>=0){
-                setButtonOne(selEle,txtLnkArr[0],retId);
+            if(g_rowStr==""){
+                let retId = getRetId(txtLnkArr[1],_rowDataJson.labelId);
+                if(retId>=0){
+                    setButtonOne(selEle,txtLnkArr[0],retId);
+                }
+            }else{ // 1ページ単位読み込みモード
+                setButtonRow(selEle,txtLnkArr[0],txtLnkArr[1]);
             }
         }
     }
@@ -128,14 +134,29 @@ setButtons = function(_rowDataJson){
         setButtonOne(selEle,"← BACK",-1);
     }
 }
-setButtonOne = function(_parentEle,_text,_nextScene){
+setButtonSub = function(_parentEle,_text){
     let btnEle = document.createElement("button");
     btnEle.classList.add("cSelBtn");
     btnEle.classList.add("cFadein");
     btnEle.type="button";
     btnEle.innerHTML=`<div class="cBtnTxt">${_text}</div>`; //.replace('<br>','\n');
-    btnEle.addEventListener("click",()=>{ chgScene(_nextScene); });
     _parentEle.appendChild(btnEle);
+    return btnEle;
+}
+setButtonOne = function(_parentEle,_text,_nextScene){
+    let btnEle = setButtonSub(_parentEle,_text);
+    btnEle.addEventListener("click",()=>{ chgScene(_nextScene); });
+}
+setButtonRow = function(_parentEle,_text,_nextLabel){
+    if(_nextLabel=="++"){
+        g_rowStr = String(g_rowNo+1);
+    }
+    let btnEle = setButtonSub(_parentEle,_text);
+    btnEle.addEventListener("click",()=>{
+        var uri = location.href.replace("&row="+encodeURI(g_rowStr),"");
+        uri += "&row="+encodeURI(_nextLabel);
+        window.location.href = uri;
+    });
 }
 
 getRetId=function(_lavelOrRow,_labelId){
