@@ -84,6 +84,7 @@ there are 3 methods to junp to another page.
 ```Go to next space{++}```  means jump to next row.  
 ##### {label}
 ```Go to next space{labelName}```  means jump to a row it has a same label name.  
+*labelName* must **not** start with number.  
 ##### {number}
 ```Go to next space{4}```  means jump to 4th row in same spreadsheet.  
 
