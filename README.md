@@ -121,3 +121,7 @@ you can change some settings by url query below;
 
 ##### set start page
 ```&page=[page]``` sets the start page to the specified number.  
+
+##### single page mode
+```&row=[row]``` sets the start page by row-index of spreadsheet.  
+audio is not available on this mode.  
