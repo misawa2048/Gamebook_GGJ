@@ -2,6 +2,7 @@ var g_items=[];
 var g_stackArr=[];
 var g_sceneId=0;
 var g_se = null;
+var g_imgDisp=true;
 var g_imgLink=false;
 
 _onload = async function(){
@@ -10,8 +11,14 @@ _onload = async function(){
     if(vars["apikey"]!=undefined) g_apiKey = vars["apikey"];
     if(vars["page"]!=undefined) sttSceneId = Math.max(parseInt(vars["page"])-1,0);
     if(vars["debug"]!=undefined) g_isDebug = (vars["debug"]=="true");
+    if(vars["img"]!=undefined) g_imgDisp = (vars["img"]=="true");
     if(vars["imglink"]!=undefined) g_imgLink = (vars["imglink"]=="true");
     let sheetName = (vars["sheet"]!=undefined) ? vars["sheet"]:DEF_SHEET_NAME;
+
+    if(g_imgDisp){
+        let imgEle = document.getElementById("iImgDiv");
+        imgEle.innerHTML=`<img src="${LOGO_IMG}" class="cMaskImgSq cFadeIn">`;
+    }
     let apiUri = API_POINT+g_apiKey+"/exec?sheet="+sheetName;
     try{
         let data = await loadData(apiUri);
@@ -60,19 +67,25 @@ loadData = async function(_uri){
 }
 
 setData = function(_rowDataJson){
-    let imgEle = document.getElementById("iImgDiv");
-    let imgUrl=_rowDataJson.image;
-    var imgHtml=`<img src="${imgUrl}" class="cMaskImgSq cFadeIn"></img>`;
-    if(g_imgLink){
-        let ImgLinkFunc = function(_img){ return `https://memeplex.app/v/${_img}`; };
-        let imgName = _rowDataJson.image.split('/').slice(-1)[0]; // 最後の/以降
-        let imgLinkUri=ImgLinkFunc(imgName);
-        imgHtml = `<a href="${imgLinkUri}" target="_">`+imgHtml+"</a>";
+    if(g_imgDisp){
+        let imgEle = document.getElementById("iImgDiv");
+        let imgUrl=_rowDataJson.image;
+
+        let params={"alt":"画像"};
+        try{ params = JSON.parse(_rowDataJson.params); }catch(e){}
+        var imgHtml=`<img src="${imgUrl}" alt="${params.alt}" class="cMaskImgSq cFadeIn"></img>`;
+        if(g_imgLink){
+            let ImgLinkFunc = function(_img){ return `https://memeplex.app/v/${_img}`; };
+            let imgName = _rowDataJson.image.split('/').slice(-1)[0]; // 最後の/以降
+            let imgLinkUri=ImgLinkFunc(imgName);
+            imgHtml = `<a href="${imgLinkUri}" target="_">`+imgHtml+"</a>";
+        }
+        imgEle.innerHTML=imgHtml;
     }
-    imgEle.innerHTML=imgHtml;
+    
     let txtEle = document.getElementById("iMainTxtDiv");
     let taggedTxt = _rowDataJson.text.replace('\n','<br>');
-    txtEle.innerHTML=`${taggedTxt}`;
+    txtEle.innerHTML=`<div>${taggedTxt}</div>`;
     //console.log(_rowDataJson.text);
     setButtons(_rowDataJson);
 
@@ -140,10 +153,11 @@ chgScene=function(_sceneId, _noStack=false){
         chgScene(data.id,true);
     }
     else if(_sceneId>=0){
-        let pageEle = document.getElementById("iFooterDiv");
-        pageEle.innerHTML=`<h5>-- ${_sceneId+1} --</h5>`;
+        let pageEle = document.getElementById("iPageNoDiv");
+        pageEle.innerHTML=`-- ${_sceneId+1} --`;
 
         setData(g_items[_sceneId]);
+        document.getElementById('iHeadDiv').focus();
 
         if(!_noStack){
             g_stackArr.push({id:g_sceneId});
