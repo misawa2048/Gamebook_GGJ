@@ -149,7 +149,7 @@ setButtonOne = function(_parentEle,_text,_nextScene){
 }
 setButtonRow = function(_parentEle,_text,_nextLabel){
     if(_nextLabel=="++"){
-        g_rowStr = String(g_rowNo+1);
+        _nextLabel = String(g_rowNo+1);
     }
     let btnEle = setButtonSub(_parentEle,_text);
     btnEle.addEventListener("click",()=>{
