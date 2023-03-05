@@ -21,7 +21,7 @@ _onload = async function(){
 
     if(g_imgDisp){
         let imgEle = document.getElementById("iImgDiv");
-        imgEle.innerHTML=`<img src="${LOGO_IMG}" class="cMaskImgSq cFadeIn" alt="title logo">`;
+        imgEle.innerHTML=`<img src="${LOGO_IMG}" class="cMaskImgSq cFadeIn" alt="splash screen">`;
     }
     let apiUri = API_POINT+g_apiKey+"/exec?sheet="+sheetName;
     if(g_rowStr!=""){
