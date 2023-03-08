@@ -99,7 +99,7 @@ setData = function(_rowDataJson){
 
     let pageEle = document.getElementById("iPageNoDiv");
     let row = (g_rowStr=="") ? (_rowDataJson.labelId+2) : g_rowNo;
-    pageEle.innerHTML=`<i aria-hidden="true">-- ${row} --</i>`; // sheetのrowNo
+    pageEle.innerHTML=`<i>-- ${row} --</i>`; // __aria_hidden_="true"
 
     var se = _rowDataJson.se;
     if((MUTE_SE!="")&&(se=="")){
